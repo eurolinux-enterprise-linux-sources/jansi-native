@@ -1,13 +1,13 @@
 %global bits 32
 %global debug_package %{nil}
 
-%ifarch x86_64 ppc64 s390x sparc64 aarch64 ppc64le
+%ifarch x86_64 ppc64 s390x sparc64 aarch64
   %global bits 64
 %endif
 
 Name:             jansi-native
 Version:          1.4
-Release:          11%{?dist}
+Release:          8%{?dist}
 Summary:          Jansi Native implements the JNI Libraries used by the Jansi project
 Group:            Development/Libraries
 License:          ASL 2.0
@@ -80,15 +80,6 @@ cp -p target/%{name}-%{version}-linux%{bits}.jar $RPM_BUILD_ROOT%{_jnidir}/%{nam
 %doc license.txt
 
 %changelog
-* Fri Aug  1 2014 Mikolaj Izdebski <mizdebsk@redhat.com> - 1.4-11
-- Recognise ppc64le as 64-bit architecture
-
-* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.4-10
-- Mass rebuild 2014-01-24
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.4-9
-- Mass rebuild 2013-12-27
-
 * Mon Nov 11 2013 Stanislav Ochotnicky <sochotnicky@redhat.com> - 1.4-8
 - Install attached artifacts for proper classifier provides
 - Enable aarch64 support

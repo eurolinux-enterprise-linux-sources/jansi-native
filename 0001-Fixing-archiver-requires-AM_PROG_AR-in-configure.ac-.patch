@@ -1,0 +1,25 @@
+From 324f6f20451942d228ddcc4a2153fd8d9487bddb Mon Sep 17 00:00:00 2001
+From: Marek Goldmann <goldmann@fedoraproject.org>
+Date: Tue, 24 Jul 2012 11:39:56 +0200
+Subject: [PATCH] Fixing "archiver requires 'AM_PROG_AR' in 'configure.ac'"
+ error
+
+---
+ src/main/native-package/m4/custom.m4 | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/main/native-package/m4/custom.m4 b/src/main/native-package/m4/custom.m4
+index 3b5e92e..75cbdec 100644
+--- a/src/main/native-package/m4/custom.m4
++++ b/src/main/native-package/m4/custom.m4
+@@ -18,4 +18,5 @@ dnl ---------------------------------------------------------------------------
+ AC_DEFUN([CUSTOM_M4_SETUP],
+ [
+   AC_CHECK_LIB([c], [isatty],[AC_DEFINE([HAVE_ISATTY], [1], [Define to 1 if you have the isatty function.])])
+-])
+\ No newline at end of file
++  AM_PROG_AR
++])
+-- 
+1.7.11.2
+
